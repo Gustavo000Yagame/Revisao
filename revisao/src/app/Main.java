@@ -45,10 +45,20 @@ public class Main {
 
 
             opcao = entrada.nextInt();
+            entrada.nextLine();
 
             switch (opcao) {
-                case 1: cadastrarAluno(entrada, alunos);
+                case 1:
+                    cadastrarAluno(entrada, alunos);
                     break;
+                case 2:
+                    listarAlunos(alunos);
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
             }
         } while (opcao != 0);
     }
