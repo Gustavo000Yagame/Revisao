@@ -5,6 +5,19 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Main {
+
+    public static PrioridadeChamado escolherPrioridade(Scanner entrada){
+        System.out.println("1 - baixa");
+        System.out.println("2 - Media");
+        System.out.println("3 - Alta");
+        int opcao = entrada.nextInt();
+        entrada.nextLine();
+
+        if (opcao == 1)return PrioridadeChamado.BAIXA;
+        if (opcao == 2)return PrioridadeChamado.MEDIA;
+        if (opcao == 3)return PrioridadeChamado.ALTA;
+        return null;
+    }
     static void main() {
         Scanner entrada = new Scanner(System.in);
         Helpdesk hd = new Helpdesk();
@@ -41,12 +54,21 @@ public class Main {
                     System.out.println("Email do cliente");
                     String email = entrada.nextLine();
 
-                    System.out.println("Prioridade");
+                    Cliente cli = hd.buscarCliente(email);
+                    if (cli == null) {
+                        System.out.println("Cliente não foi encontrado"); break;
+                    }
+                    PrioridadeChamado prio = escolherPrioridade(entrada);
 
-                    System.out.println("Cliente");
+                    hd.abrirChamado(numero, titulo, descricao, prio, cli);
+                    System.out.println("Chamado com Sucesso!!"); break;
+
+
                 }
             }
         }while(opcao != 0);
+
+
 
     }
 }
