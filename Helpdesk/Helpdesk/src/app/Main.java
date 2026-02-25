@@ -62,9 +62,13 @@ public class Main {
                     }
                     PrioridadeChamado prio = escolherPrioridade(entrada);
 
+                    entrada.nextLine();
+
                     hd.abrirChamado(numero, titulo, descricao, prio, cli);
                     System.out.println("Chamado com Sucesso!!"); break;
-
+                }
+                case 3: {
+                    //alterar status de um chamado aberto
                 }
             }
         }while(opcao != 0);
