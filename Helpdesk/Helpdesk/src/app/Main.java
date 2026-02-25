@@ -35,8 +35,10 @@ public class Main {
                 case 1: {
                     System.out.println("Nome: ");
                     String nome = entrada.nextLine();
+                    entrada.nextLine();
                     System.out.println("Email: ");
                     String email = entrada.nextLine();
+
                     hd.cadastrarCliente(nome,email);
                     System.out.println("Cliente cadastrado!"); break;
                 }
@@ -63,11 +65,9 @@ public class Main {
                     hd.abrirChamado(numero, titulo, descricao, prio, cli);
                     System.out.println("Chamado com Sucesso!!"); break;
 
-
                 }
             }
         }while(opcao != 0);
-
 
 
     }
