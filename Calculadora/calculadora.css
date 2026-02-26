@@ -28,3 +28,8 @@ input, select, button{
     border: 1px solid #cccccc;
     border-radius: 5px;
 }
+button{
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
