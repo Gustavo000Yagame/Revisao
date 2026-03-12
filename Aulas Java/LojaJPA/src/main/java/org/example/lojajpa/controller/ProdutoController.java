@@ -2,9 +2,7 @@ package org.example.lojajpa.controller;
 
 import org.example.lojajpa.model.Produto;
 import org.example.lojajpa.service.ProdutoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +21,10 @@ public class ProdutoController {
         public List<Produto> Listar(){
             return service.listar();
         }
+
+        @PostMapping
+        public Produto criar(@RequestBody Produto produto){
+            return service.salvar(produto);
+        }
+
 }
