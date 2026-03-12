@@ -14,7 +14,11 @@ public class ProdutoService {
     }
 
     public Produto salvar(Produto produto){
-
+        return  repository.save(produto);
     }
+    public Produto buscar(Long id){
+        return repository.findById(id).orElse(null);
+    }
+
 
 }
