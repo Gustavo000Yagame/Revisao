@@ -4,6 +4,8 @@ import org.example.lojajpa.model.Produto;
 import org.example.lojajpa.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProdutoService {
 
@@ -20,5 +22,7 @@ public class ProdutoService {
         return repository.findById(id).orElse(null);
     }
 
-
+    public List<Produto> listar(){
+        return repository.findAll();
+    }
 }
