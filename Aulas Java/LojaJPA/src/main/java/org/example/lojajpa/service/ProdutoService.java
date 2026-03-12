@@ -25,4 +25,8 @@ public class ProdutoService {
     public List<Produto> listar(){
         return repository.findAll();
     }
+
+    public void deletar(Long id){
+        repository.deleteById(id);
+    }
 }
